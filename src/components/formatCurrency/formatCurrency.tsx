@@ -1,5 +1,9 @@
- const formatCurrency = ({value}: {value: string}) => {
-  const numericValue = parseFloat(value.replace(/\D/g, ""));
+ const formatCurrency = ({value}: {value: string}):number => {
+  let numericValue = parseFloat(value.replace(/\D/g, ""));
+
+  if (isNaN(numericValue)) {
+    numericValue = 0;
+  }
 
   const formattedValue = new Intl.NumberFormat("pt-BR", {
     style: "currency",
