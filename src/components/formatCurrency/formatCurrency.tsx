@@ -1,4 +1,4 @@
- const formatCurrency = ({value}: {value: string}):number => {
+ const formatCurrency = ({value}: {value: string}) => {
   let numericValue = parseFloat(value.replace(/\D/g, ""));
 
   if (isNaN(numericValue)) {

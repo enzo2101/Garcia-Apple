@@ -6,12 +6,12 @@ import { ParcelCalculator } from "~/components/parcelCalculator/parcelCalculator
 
 const Parcela = () => {
   const [parcel, setParcel] = useState<number | "">("");
-  const [value, setValue] = useState<number | "">("");
+  const [value, setValue] = useState("R$ 0,00");
 
   const handleValue = (e: ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
     const formattedValue = formatCurrency({ value: inputValue });
-    setValue(formattedValue === 0 ? "" : formattedValue);
+    setValue(formattedValue);
   };
 
   const handleParcel = (e: ChangeEvent<HTMLInputElement>) => {

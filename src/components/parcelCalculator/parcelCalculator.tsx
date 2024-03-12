@@ -1,4 +1,4 @@
-export const ParcelCalculator = (/* { children }: { children: React.ReactNode } */) => {
+export const ParcelCalculator = () => {
 
 
 
