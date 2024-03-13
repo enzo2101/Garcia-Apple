@@ -2,11 +2,12 @@
 
 import { useState, ChangeEvent } from "react";
 import formatCurrency from "~/components/formatCurrency/formatCurrency";
-import { ParcelCalculator } from "~/components/parcelCalculator/parcelCalculator";
+import { parcelCalculator } from "~/components/parcelCalculator/parcelCalculator";
 
 const Parcela = () => {
-  const [parcel, setParcel] = useState<number | "">("");
-  const [value, setValue] = useState("R$ 0,00");
+  const [parcel, setParcel] = useState("");
+  const [value, setValue] = useState("");
+  const [parcelValue, setParcelValue] = useState("");
 
   const handleValue = (e: ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
@@ -16,13 +17,26 @@ const Parcela = () => {
 
   const handleParcel = (e: ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
-    const numericValue = inputValue === "" ? "" : Number(inputValue);
-    setParcel(numericValue);
-    if (numericValue && numericValue > 18) {
-      setParcel(18);
+    const numericValue = inputValue === "" ? "" : inputValue;
+
+    const parsedValue = parseInt(numericValue);
+    if (!isNaN(parsedValue) && parsedValue >= 1 && parsedValue <= 18) {
+      setParcel(numericValue);
+    } else {
+      if (parsedValue < 1) {
+        setParcel("1");
+      } else {
+        setParcel("18");
+      }
     }
   };
 
+  const handleCalculate = () => {
+    let calculatedParcel = parcelCalculator(value, parcel);
+    setParcelValue(calculatedParcel);
+    setValue("");
+    setParcel("");
+  }
 
   return (
     <div className="w-screen h-screen flex justify-center items-center">
@@ -43,8 +57,8 @@ const Parcela = () => {
             onChange={handleParcel}
             value={parcel}
           />
-          <button className="border-2 border-purple-500 rounded-lg p-1 bg-purple-500">Ver Valor da Parcela</button>
-          <ParcelCalculator />
+          <button onClick={handleCalculate} className="border-2 border-purple-500 rounded-lg p-1 bg-purple-500">Ver Valor da Parcela</button>
+          {parcelValue && (<div>{parcelValue}</div>)}
         </div>
       </div>
     </div>
