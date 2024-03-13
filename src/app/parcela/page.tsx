@@ -33,7 +33,7 @@ const Parcela = () => {
   };
 
   const handleCalculate = () => {
-    let calculatedParcel = parcelCalculator(value, parcel);
+    const calculatedParcel = parcelCalculator(value, parcel);
     setParcelValue(calculatedParcel);
     setValue("");
     setParcel("");

@@ -19,9 +19,9 @@ export const parcelCalculator = (value: string, parcel: string): string => {
 
   const interest: number = interestRates[interestIndex] ?? 0;
 
-  const parcelValue: number = ((valueFloat * (interest / 100)) + valueFloat) / parcelInt;
+  const calculatedParcel: number = ((valueFloat * (interest / 100)) + valueFloat) / parcelInt;
 
-  const roundedParcelValue: number = Math.ceil(parcelValue * 100) / 100;
+  const roundedParcelValue: number = Math.ceil(calculatedParcel * 100) / 100;
 
   const formattedParcelValue: string = roundedParcelValue.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2, style: 'currency', currency: 'BRL' });
 
