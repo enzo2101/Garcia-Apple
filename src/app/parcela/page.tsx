@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, ChangeEvent } from "react";
+import Header from "~/components/Header/Header";
 import formatCurrency from "~/components/formatCurrency/formatCurrency";
 import { parcelCalculator } from "~/components/parcelCalculator/parcelCalculator";
 
@@ -39,26 +40,29 @@ const Parcela = () => {
   }
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
-      <div className="w-96 h-96">
-        <div className="flex flex-col space-y-4 w-2/3">
-          <input
-            type="text"
-            placeholder="Valor a ser parcelado"
-            className="border-2 border-black rounded-lg pl-3"
-            onChange={handleValue}
-            value={value}
-            maxLength={12}
-          />
-          <input
-            type="number"
-            placeholder="Quantidade de Parcelas"
-            className="border-2 border-black rounded-lg pl-3"
-            onChange={handleParcel}
-            value={parcel}
-          />
-          <button onClick={handleCalculate} className="border-2 border-purple-500 rounded-lg p-1 bg-purple-500">Ver Valor da Parcela</button>
-          {parcelValue && (<div>{parcelValue}</div>)}
+    <div className="min-h-screen bg-gray-100">
+      <Header />
+      <div className="h-screen flex justify-center items-center">
+        <div className="bg-white rounded-lg shadow-lg p-6 w-72">
+          <div className="flex flex-col space-y-4">
+            <input
+              type="text"
+              placeholder="Valor a ser parcelado"
+              className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-purple-500"
+              onChange={handleValue}
+              value={value}
+              maxLength={12}
+            />
+            <input
+              type="number"
+              placeholder="Quantidade de Parcelas"
+              className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-purple-500"
+              onChange={handleParcel}
+              value={parcel}
+            />
+            <button onClick={handleCalculate} className="bg-purple-500 text-white rounded-lg py-3 px-6 focus:outline-none hover:bg-purple-600">Ver Valor da Parcela</button>
+            {parcelValue && (<div className="text-purple-500 font-semibold">{parcelValue}</div>)}
+          </div>
         </div>
       </div>
     </div>

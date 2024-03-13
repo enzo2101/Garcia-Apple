@@ -19,5 +19,5 @@ export const parcelCalculator = (value: string, parcel: string) => {
 
   const formattedParcelValue = roundedParcelValue.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2, style: 'currency', currency: 'BRL' });
 
-  return `O valor da parcela para o valor parcelado de ${value} em ${parcelInt} vezes é: ${formattedParcelValue}`;
+  return `O valor da parcela para o valor de ${value} em ${parcelInt} vezes é: ${formattedParcelValue}`;
 }
