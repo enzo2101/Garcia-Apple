@@ -8,7 +8,7 @@ const Header = () => {
         <h1 className="text-white">Logo</h1>
       </div>
       <div className="md:hidden">
-        <select className="bg-transparent border-none text-white" onChange={(e) => window.location.href = e.target.value}>
+        <select className="bg-black border-none text-white" onChange={(e) => window.location.href = e.target.value}>
           <option value="">☰</option>
           <option value="/parcela">Parcela</option>
           <option value="/produtos">Produtos</option>
