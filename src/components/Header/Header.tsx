@@ -6,7 +6,9 @@ const Header = () => {
     <div className="bg-black w-full">
       <div className="text-xl p-10 flex max-w-[1200px] justify-between ml-auto mr-auto">
         <div>
-          <img src="./Logo.png" alt="" />
+          <Link href={"/"}>
+            <img src="./Logo.png" alt="Logo Garcia" />
+          </Link>
         </div>
         <div className="md:hidden">
           <select className="bg-black border-none text-white" onChange={(e) => window.location.href = e.target.value}>
