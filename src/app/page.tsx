@@ -8,7 +8,7 @@ export default function HomePage() {
       <Header />
       <div className="h-screen w-full flex justify-center">
         <div className="bg-black h-3/5 w-full flex justify-center ">
-          <div className="flex align-baseline justify-between space-x-1 max-w-[1200px]">
+          <div className="md:flex lg:align-baseline justify-between space-x-1 max-w-[1200px]">
             <div className="space-y-14 w-3/5 pt-10 ">
               <h1 className="font-bold text-6xl text-white">O Melhor Iphone na sua mão<span className="text-yellow-500">.</span></h1>
               <p className="text-gray-400">Nós da Garcia Apple trabalhamos os iphones
