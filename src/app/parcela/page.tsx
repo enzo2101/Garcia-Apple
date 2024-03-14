@@ -33,10 +33,12 @@ const Parcela = () => {
   };
 
   const handleCalculate = () => {
-    const calculatedParcel = parcelCalculator(value, parcel);
-    setParcelValue(calculatedParcel);
-    setValue("");
-    setParcel("");
+    if (value && parcel) {
+      const calculatedParcel = parcelCalculator(value, parcel);
+      setParcelValue(calculatedParcel);
+      setValue("");
+      setParcel("");
+    }
   }
 
   return (
