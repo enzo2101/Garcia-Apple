@@ -50,7 +50,7 @@ const Parcela = () => {
             <input
               type="text"
               placeholder="Valor a ser parcelado"
-              className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-purple-500"
+              className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-yellow-500"
               onChange={handleValue}
               value={value}
               maxLength={12}
@@ -58,11 +58,11 @@ const Parcela = () => {
             <input
               type="number"
               placeholder="Quantidade de Parcelas"
-              className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-purple-500"
+              className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-yellow-500"
               onChange={handleParcel}
               value={parcel}
             />
-            <button onClick={handleCalculate} className="bg-purple-500 text-white rounded-lg py-3 px-6 focus:outline-none hover:bg-purple-600">Ver Valor da Parcela</button>
+            <button onClick={handleCalculate} className="bg-gradient-to-b from-yellow-500 to-yellow-600 text-lg p-4 rounded-md">Ver Valor da Parcela</button>
             {parcelValue && (<div className="text-purple-500 font-semibold">{parcelValue}</div>)}
           </div>
         </div>
