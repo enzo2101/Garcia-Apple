@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Header = () => {
   return (
     <div className="bg-black w-full">
-      <div className="text-xl p-10 flex max-w-[1200px] justify-between ml-auto mr-auto">
+      <div className="text-xl p-10 flex max-w-[1000px] justify-between ml-auto mr-auto">
         <div>
           <Link href={"/"}>
             <img src="./Logo.png" alt="Logo Garcia" />
