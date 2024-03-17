@@ -16,14 +16,10 @@ export const parcelCalculator = (value: string, parcel: string): string => {
   ];
 
   const interestIndex: number = parcelInt - 1;
-
   const interest: number = interestRates[interestIndex] ?? 0;
-
   const calculatedParcel: number = ((valueFloat * (interest / 100)) + valueFloat) / parcelInt;
-
   const roundedParcelValue: number = Math.ceil(calculatedParcel * 100) / 100;
-
   const formattedParcelValue: string = roundedParcelValue.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2, style: 'currency', currency: 'BRL' });
 
-  return `O valor da parcela para o valor de ${value} em ${parcelInt} vezes é: ${formattedParcelValue}`;
+  return formattedParcelValue;
 }

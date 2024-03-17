@@ -8,6 +8,8 @@ import { parcelCalculator } from "~/components/parcelCalculator/parcelCalculator
 const Parcela = () => {
   const [parcel, setParcel] = useState("");
   const [value, setValue] = useState("");
+  const [informedValue, setInformedValue] = useState("");
+  const [informedParcel, setInformedParcel] = useState("");
   const [parcelValue, setParcelValue] = useState("");
 
   const handleValue = (e: ChangeEvent<HTMLInputElement>) => {
@@ -36,6 +38,8 @@ const Parcela = () => {
     if (value && parcel) {
       const calculatedParcel = parcelCalculator(value, parcel);
       setParcelValue(calculatedParcel);
+      setInformedValue(value);
+      setInformedParcel(parcel);
       setValue("");
       setParcel("");
     }
@@ -45,7 +49,7 @@ const Parcela = () => {
     <div className="bg-zinc-900 min-h-screen flex flex-col">
       <Header />
       <div className="flex flex-grow justify-center items-center">
-        <div className="bg-white rounded-lg shadow-5xl p-6 w-72">
+        <div className="bg-white rounded-lg shadow-5xl p-6 w-96">
           <div className="flex flex-col space-y-4">
             <input
               type="text"
@@ -63,7 +67,12 @@ const Parcela = () => {
               value={parcel}
             />
             <button onClick={handleCalculate} className="bg-gradient-to-b from-yellow-500 to-yellow-600 text-lg p-4 rounded-md">Ver Valor da Parcela</button>
-            {parcelValue && (<div className="text-black font-semibold">{parcelValue}</div>)}
+            {parcelValue && (
+              <>
+                <h1>Valor informado: {informedValue}</h1>
+                <h1>Quantidade de parcelas: {informedParcel}</h1>
+                <h1>Valor de cada parcela: {parcelValue}</h1>
+              </>)}
           </div>
         </div>
       </div>
