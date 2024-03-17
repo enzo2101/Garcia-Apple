@@ -15,7 +15,7 @@ const Header = () => {
           <Link className="text-white p-2 bg-zinc-800 rounded-md" href={"/parcela"}>Parcela</Link>
           {/* <Link className="text-white" href={"/produtos"}>Produtos</Link> */}
           <Link className="text-white p-2 bg-zinc-800 rounded-md" href={"/contatos"}>Contatos</Link>
-          <Link className="text-white p-2 bg-zinc-800 rounded-md" href={"/recibos"}>Recibos</Link>
+          {/* <Link className="text-white p-2 bg-zinc-800 rounded-md" href={"/recibos"}>Recibos</Link> */}
         </div>
       </div>
     </div>
