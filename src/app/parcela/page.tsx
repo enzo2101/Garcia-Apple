@@ -42,10 +42,10 @@ const Parcela = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="bg-zinc-900 min-h-screen flex flex-col">
       <Header />
-      <div className="h-screen flex justify-center items-center">
-        <div className="bg-white rounded-lg shadow-lg p-6 w-72">
+      <div className="flex flex-grow justify-center items-center">
+        <div className="bg-white rounded-lg shadow-5xl p-6 w-72">
           <div className="flex flex-col space-y-4">
             <input
               type="text"
@@ -63,7 +63,7 @@ const Parcela = () => {
               value={parcel}
             />
             <button onClick={handleCalculate} className="bg-gradient-to-b from-yellow-500 to-yellow-600 text-lg p-4 rounded-md">Ver Valor da Parcela</button>
-            {parcelValue && (<div className="text-purple-500 font-semibold">{parcelValue}</div>)}
+            {parcelValue && (<div className="text-black font-semibold">{parcelValue}</div>)}
           </div>
         </div>
       </div>
