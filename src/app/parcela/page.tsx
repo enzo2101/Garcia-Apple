@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useRef, useEffect } from "react";
 import Header from "~/components/Header/Header";
 import formatCurrency from "~/components/formatCurrency/formatCurrency";
 import { parcelCalculator } from "~/components/parcelCalculator/parcelCalculator";
@@ -10,9 +10,14 @@ const Parcela = () => {
   const [value, setValue] = useState("");
   const [downValue, setDownValue] = useState("");
 
-  const [informedDownValue, setInformedDownValue] = useState("");
+  const prevDownValue = useRef("");
+  const prevValue = useRef("");
+  const prevParcel = useRef("");
+
+/*   const [informedDownValue, setInformedDownValue] = useState("");
   const [informedValue, setInformedValue] = useState("");
-  const [informedParcel, setInformedParcel] = useState("");
+  const [informedParcel, setInformedParcel] = useState(""); */
+
   const [parcelValue, setParcelValue] = useState("");
 
   const handleValue = (e: ChangeEvent<HTMLInputElement>) => {
@@ -25,6 +30,12 @@ const Parcela = () => {
     const formattedDownValue = formatCurrency({ value: inputDownValue });
     setDownValue(formattedDownValue);
   };
+
+  useEffect(() => {
+    prevDownValue.current = downValue;
+    prevValue.current = value;
+    prevParcel.current = parcel;
+  }, [value, downValue, parcel]);
 
   const handleParcel = (e: ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
@@ -46,9 +57,9 @@ const Parcela = () => {
     if (value && parcel && downValue) {
       const calculatedParcel = parcelCalculator(value, parcel, downValue);
       setParcelValue(calculatedParcel);
-      setInformedValue(value);
+/*       setInformedValue(value);
       setInformedParcel(parcel);
-      setInformedDownValue(downValue);
+      setInformedDownValue(downValue); */
       setDownValue("");
       setValue("");
       setParcel("");
@@ -87,9 +98,9 @@ const Parcela = () => {
             <button onClick={handleCalculate} className="bg-gradient-to-b from-yellow-500 to-yellow-600 text-lg p-4 rounded-md">Ver Valor da Parcela</button>
             {parcelValue && (
               <>
-                <h1>Valor de Entrada: <span className="text-yellow-500 font-bold">{informedDownValue}</span></h1>
-                <h1>Valor informado: <span className="text-yellow-500 font-bold">{informedValue}</span></h1>
-                <h1>Quantidade de parcelas: <span className="text-yellow-500 font-bold">{informedParcel}</span></h1>
+                <h1>Valor de Entrada: <span className="text-yellow-500 font-bold">{prevDownValue.current}</span></h1>
+                <h1>Valor informado: <span className="text-yellow-500 font-bold">{prevValue.current}</span></h1>
+                <h1>Quantidade de parcelas: <span className="text-yellow-500 font-bold">{prevParcel.current}</span></h1>
                 <h1>Valor de cada parcela: <span className="text-yellow-500 font-bold">{parcelValue}</span></h1>
               </>)}
           </div>
