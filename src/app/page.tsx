@@ -11,9 +11,9 @@ export default function HomePage() {
       <Header />
       <div className="flex-grow bg-zinc-900">
         <div className="flex justify-center">
-          <div className="flex xl:flex-row flex-col space-y-10 xl:space-y-0 xl:space-x-10 py-10 px-4 justify-between xl:max-w-[1200px] mx-auto">
-            <div className="space-y-4 xl:pt-36 xl:max-w-[500px] xl:text-left">
-              <h1 className="font-bold text-4xl xl:text-5xl text-white">O Melhor Iphone na sua mão<span className="text-yellow-500">.</span></h1>
+          <div className="flex md:flex-row flex-col space-y-10 md:space-y-0 md:space-x-10 py-10 px-4 justify-between md:max-w-[1200px] mx-auto">
+            <div className="space-y-4 md:pt-36 md:max-w-[500px] md:text-left">
+              <h1 className="font-bold text-4xl md:text-5xl text-white">O Melhor Iphone na sua mão<span className="text-yellow-500">.</span></h1>
               <p className="text-gray-400 font-bold">Nós da Garcia Apple trabalhamos os iPhones com melhor estado de conservação de Natal-RN</p>
               <div>
                 <Link href="https://www.instagram.com/garciaapple_/">
@@ -22,17 +22,21 @@ export default function HomePage() {
               </div>
             </div>
             <div>
-              <img className="rounded-xl h-[500px] w-[400px] xl:h-[700px] xl:w-[560px]" src="./introducao1.png" alt="Imagem Iphone 15 Pro Max" />
+              <img className="rounded-xl h-[500px] w-[400px] md:h-[700px] md:w-[560px]" src="./introducao1.png" alt="Imagem Iphone 15 Pro Max" />
             </div>
           </div>
         </div>
         <div className="w-full">
           <div className="w-full bg-white py-10">
-            <div className="xl:max-w-[1200px] mx-auto px-4">
+            <div className="md:max-w-[1200px] mx-auto px-4">
               <div className="space-y-4">
-                <h1 className="font-bold text-3xl xl:text-5xl text-black">Quem somos nós?</h1>
-                <p className="text-gray-400 font-bold">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe alias doloremque rem eaque exercitationem, quidem quaerat nam sit praesentium adipisci ipsa incidunt odit quod maiores voluptatum quo a, fuga reiciendis?
-                  Iste nobis eveniet ut dolores, amet illum cumque mollitia error accusantium, nihil, expedita ipsum molestiae sit blanditiis harum cupiditate minus esse sint. Consectetur autem eius sit impedit earum voluptate fuga.</p>
+                <h1 className="font-bold text-3xl md:text-5xl text-black">Quem somos nós?</h1>
+                <p className="text-gray-400 font-bold">
+                  A Garcia Apple, empresa especializada na revenda de iPhones, tem como principal valor a busca contínua
+                  pela excelência na experiência do cliente. Nosso compromisso é proporcionar a você o melhor produto,
+                  acompanhado das mais vantajosas condições de compra. Por isso, oferecemos parcelamento em até 18 vezes
+                  e aceitamos seu iPhone usado como parte do pagamento, visando reduzir o custo total do seu novo dispositivo.
+                </p>
                 <div>
                   <Link href="https://api.whatsapp.com/send/?phone=558488271234&text&type=phone_number&app_absent=0">
                     <button className="bg-gradient-to-b from-yellow-500 to-yellow-600 text-lg p-4 rounded-md">FALAR COM UM DE NOSSOS ATENDENTES</button>
@@ -42,8 +46,8 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div className="text-white xl:max-w-[1200px] mx-auto px-4 py-10 space-y-8">
-          <h1 className="font-bold text-3xl xl:text-5xl">Pagamentos<span className="text-yellow-500">.</span></h1>
+        <div className="text-white md:max-w-[1200px] mx-auto px-4 py-10 space-y-8">
+          <h1 className="font-bold text-3xl md:text-5xl">Pagamentos<span className="text-yellow-500">.</span></h1>
           <div className="py-7 px-10 bg-black rounded-lg space-y-10">
             <h1 className="font-bold text-3xl text-yellow-500">FORMAS DE PAGAMENTO</h1>
             <div className="space-y-3">

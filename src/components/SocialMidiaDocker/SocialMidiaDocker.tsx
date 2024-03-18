@@ -11,7 +11,7 @@ const SocialMidiaDocker = ({ link, social }: { link: string, social: string }) =
     case "Whatsapp":
       return (
         <IconContext.Provider value={{ className: "text-green-500" }}>
-          <Link className="bg-white rounded-lg shadow-5xl p-6 w-auto text-2xl" href={link}>
+          <Link className="bg-white rounded-lg shadow-5xl p-6 w-auto text-2xl lg:min-w-[680px]" href={link}>
             <div className="flex flex-row">
               <div className="flex justify-start mx-auto my-auto">
                 <IoLogoWhatsapp />
@@ -26,7 +26,7 @@ const SocialMidiaDocker = ({ link, social }: { link: string, social: string }) =
     case "Instagram":
       return (
         <IconContext.Provider value={{ className: "text-rose-500" }}>
-          <Link className="bg-white rounded-lg shadow-5xl p-6 w-auto text-2xl" href={link}>
+          <Link className="bg-white rounded-lg shadow-5xl p-6 w-auto text-2xl lg:min-w-[680px]" href={link}>
             <div className="flex flex-row">
               <div className="flex justify-start mx-auto my-auto">
                 <FaInstagram />
@@ -42,7 +42,7 @@ const SocialMidiaDocker = ({ link, social }: { link: string, social: string }) =
     case "Nossa Localização":
       return (
         <IconContext.Provider value={{ className: "text-blue-500" }}>
-          <Link className="bg-white rounded-lg shadow-5xl p-6 w-auto text-2xl" href={link}>
+          <Link className="bg-white rounded-lg shadow-5xl p-6 w-auto text-2xl lg:min-w-[680px]" href={link}>
             <div className="flex flex-row">
               <div className="flex justify-start mx-auto my-auto">
                 <MdLocationPin />

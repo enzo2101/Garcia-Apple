@@ -4,8 +4,8 @@ import Link from 'next/link';
 const Header = () => {
   return (
     <div className="bg-black w-full">
-      <div className="flex xl:mx-auto justify-between py-8 px-2 xl:max-w-[1100px]">
-        <div className="mx-auto xl:mx-0 my-auto flex" >
+      <div className="flex md:mx-auto justify-between py-8 px-2 md:max-w-[1100px]">
+        <div className="mx-auto lg:mx-0 my-auto flex" >
           <Link href={"/"}>
             <img className="" src="./Logo.png" alt="Logo Garcia" />
           </Link>
