@@ -1,14 +1,19 @@
-export const parcelCalculator = (value: string, parcel: string): string => {
+export const parcelCalculator = (value: string, parcel: string, downValue: string): string => {
   const formattedValue: string = value.replace("R$", "");
 
   const valueWithoutDot: string = formattedValue.replace(/\./g, "");
   const valueFloat: number = parseFloat(valueWithoutDot.replace(",", "."));
 
+  const formattedDownValue: string = downValue.replace("R$", "")
+
+  const DownValueWithoutDot: string = formattedDownValue.replace(/\./g, "");
+  const downValueFloat: number = parseFloat(DownValueWithoutDot.replace(",", "."));
+
   const parcelInt: number = parseInt(parcel);
 
-  if (parcelInt < 1 || parcelInt > 18) {
+/*   if (parcelInt < 1 || parcelInt > 18) {
     throw new Error("Número de parcelas inválido. Por favor, escolha um número de 1 a 18.");
-  }
+  } */
 
   const interestRates: number[] = [
     2.99, 2.86, 3.60, 4.33, 5.06, 5.78, 6.39, 7.09, 7.78,
@@ -17,7 +22,8 @@ export const parcelCalculator = (value: string, parcel: string): string => {
 
   const interestIndex: number = parcelInt - 1;
   const interest: number = interestRates[interestIndex] ?? 0;
-  const calculatedParcel: number = ((valueFloat * (interest / 100)) + valueFloat) / parcelInt;
+  const realValue = valueFloat - downValueFloat;
+  const calculatedParcel: number = ((realValue * (interest / 100)) + realValue) / parcelInt;
   const roundedParcelValue: number = Math.ceil(calculatedParcel * 100) / 100;
   const formattedParcelValue: string = roundedParcelValue.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2, style: 'currency', currency: 'BRL' });
 
