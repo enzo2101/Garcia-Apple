@@ -86,7 +86,7 @@ const Parcela = () => {
             />
             <input
               type="text"
-              placeholder="Valor a ser parcelado"
+              placeholder="Valor total do dispositivo"
               className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-yellow-500"
               onChange={handleValue}
               value={value}
